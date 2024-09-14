@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn {
+    @apply px-1 text-xs py-1 border-r last:border-r-0 first:rounded-l last:rounded-r;
+  }
+  .active {
+    @apply bg-black bg-opacity-40;
+  }
+}
+
+html {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
