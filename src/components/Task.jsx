@@ -39,7 +39,7 @@ export function Task({ task, setTasks, tasks, checked, id }) {
         <i className={"fa-regular fa-square text-lg" + ((done && "-check") || "")}></i>
       </div>
       {status === "editing" && (
-        <div className="absolute left-7 flex z-50">
+        <div className="absolute left-7 flex z-30">
           <input
             onChange={(e) => setInputValue(e.target.value)}
             type="text"
