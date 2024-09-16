@@ -29,14 +29,14 @@ export function Task({ task, setTasks, tasks, checked, id }) {
   }
   return (
     <li
-      className="flex items-center relative justify-center text-sm w-full"
+      className="flex items-center relative justify-center text-md sm:text-sm w-full "
       id={id}
     >
       <div
         onClick={handleToggleTask}
         className="flex items-center cursor-pointer p-1"
       >
-        <i className={"fa-regular fa-square" + ((done && "-check") || "")}></i>
+        <i className={"fa-regular fa-square text-lg" + ((done && "-check") || "")}></i>
       </div>
       {status === "editing" && (
         <div className="absolute left-7 flex z-50">
@@ -77,7 +77,7 @@ export function Task({ task, setTasks, tasks, checked, id }) {
       <div className="mb-0.5 cursor-pointer flex items-center">
         <i
           className={
-            "fa-regular fa-pen-to-square text-xs" +
+            "fa-regular fa-pen-to-square text-sm" +
             ((done && " invisible") || "") +
             (status === "editing" ? " invisible" : "")
           }
@@ -85,7 +85,7 @@ export function Task({ task, setTasks, tasks, checked, id }) {
         ></i>
         <i
           className={
-            "fa-solid fa-xmark ml-1" +
+            "fa-solid fa-xmark ml-1 text-lg" +
             (status === "editing" ? " invisible" : "")
           }
           onClick={handleDeleteTask}

@@ -21,7 +21,7 @@ export function AddTask({ tasks, setTasks }) {
           ],
         ]);
       }}
-      className=" mb-10 mt-2 *:border-2 w-full text-sm border-dashed bg-white bg-opacity-20"
+      className=" mb-40 mt-2 *:border-2 w-full text-sm border-dashed bg-white bg-opacity-20"
     >
       ADD TASK
     </button>

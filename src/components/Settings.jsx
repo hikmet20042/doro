@@ -68,7 +68,7 @@ export function Settings({
   setFontFamily,
 }) {
   return (
-    <div className="absolute select-none mx-auto w-1/2 rounded bg-white text-black">
+    <div className="absolute select-none mx-auto w-full sm:w-1/2 rounded bg-white text-black">
       <div className="py-2 px-5 text-center border-b flex items-center justify-between">
         <div>Settings</div>
         <i
@@ -76,7 +76,7 @@ export function Settings({
           className="fa-solid fa-xmark text-black inline-block cursor-pointer"
         />
       </div>
-      <section className="text-sm border-b">
+      <section className="text-xs sm:text-sm border-b">
         <div className="text-xs p-2">Timer</div>
         <ul>
           <ToggleSwitch
@@ -106,7 +106,7 @@ export function Settings({
         </ul>
       </section>
 
-      <section className="text-sm">
+      <section className="text-xs sm:text-sm">
         <div className="text-xs p-2">Theme</div>
         <ul>
           <li className="p-3 flex items-center justify-between">

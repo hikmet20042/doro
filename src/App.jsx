@@ -13,7 +13,7 @@ function App() {
   const [fontFamily, setFontFamily] = useState("main");
   return (
     <div
-      className={`relative flex flex-col items-center w-full h-full bg-${theme} font-${fontFamily}`}
+      className={`relative flex flex-col items-center min-h-screen bg-${theme} font-${fontFamily}`}
     >
       <Navbar setShowSettings={setShowSettings} />
       <PomodoroTimer
