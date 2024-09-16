@@ -17,4 +17,12 @@ export default {
     },
   },
   plugins: [],
+  safelist: [
+    {
+      pattern: /(bg|text|border)-(main|secondTheme|thirdTheme|fourthTheme)/,
+    },
+    {
+      pattern: /(font)-(main|logo|mono|serif)/,
+    },
+  ],
 };

@@ -11,9 +11,6 @@ export function Navbar({ setShowSettings }) {
         <div onClick={() => setShowSettings(true)} className="cursor-pointer">
           <i className="fa-solid fa-gear"></i>
         </div>
-        <div className="text-sm cursor-pointer bg-white text-black  w-5 h-5 rounded-full flex items-center justify-center">
-          <i className="fa-solid fa-user"></i>
-        </div>
       </div>
     </nav>
   );

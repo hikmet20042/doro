@@ -17,20 +17,22 @@ export function Timer({
   const [pomodoroTime, setPomodoroTime] = useState(25);
   const [shortBreak, setShortBreak] = useState(5);
   const [longBreak, setLongBreak] = useState(15);
+  const [timeInput, setTimeInput] = useState(0);
 
   function handleBlur(e) {
-    const inputMinute = e.target.value || 0; // If empty, set to 0
-    setTotalTime(inputMinute * 60);
+    setTotalTime(timeInput * 60);
+    if (String(timeInput).length === 1) {
+      setTimeInput("0" + timeInput);
+    }
   }
 
   function handleChange(e) {
-    const inputValue = e.target.value;
-
-    if (inputValue.toString().length >= 5) return;
-    setTotalTime(inputValue * 60);
-
-    updateSelectedTime(inputValue);
-    setPomodoroCount(0);
+    if (String(e.target.value).length >= 3) {
+      return;
+    } else {
+      setTimeInput(e.target.value);
+      updateSelectedTime(e.target.value);
+    }
   }
 
   function updateSelectedTime(value) {
@@ -102,11 +104,17 @@ export function Timer({
       clearTimeout(timerId);
     }
 
+    setTimeInput(
+      String(Math.floor(totalTime / 60)).length === 1
+        ? "0" + Math.floor(totalTime / 60)
+        : Math.floor(totalTime / 60)
+    );
+
     return () => clearTimeout(timerId);
   }, [status, totalTime, selectedBtn, pomodoroCount]);
 
   return (
-    <div className="text-white bg-white bg-opacity-25 flex flex-col items-center rounded-lg pb-5 border-gray-300 border">
+    <div className="text-white max-w-full px-10 bg-white bg-opacity-25 flex flex-col items-center justify-center rounded-lg pb-5 border-gray-300 border">
       <ButtonGroup
         status={status}
         setTotalTime={setTotalTime}
@@ -119,20 +127,16 @@ export function Timer({
         longBreak={longBreak}
       />
 
-      <div className="text-7xl select-none">
+      <div className="text-7xl select-none max-w-full flex items-center justify-center">
         <input
           type="number"
           min={0}
-          value={
-            String(Math.floor(totalTime / 60)).length === 1
-              ? "0" + Math.floor(totalTime / 60)
-              : Math.floor(totalTime / 60)
-          }
-          max={9999}
+          max={999}
+          value={timeInput}
           onClick={(e) => e.target.select()}
           onChange={handleChange}
           onBlur={handleBlur}
-          className="bg-transparent outline-none text-end w-1/2 text-inherit h-24"
+          className="bg-transparent outline-none text-end w-24 text-inherit h-24"
         />
         :
         {String(totalTime % 60).length === 1

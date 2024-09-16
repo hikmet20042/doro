@@ -6,7 +6,7 @@ export function PomodoroTimer({ autoBreak, autoPomodoro, longBreakInterval }) {
   const [status, setStatus] = useState("stopped");
   const [totalTime, setTotalTime] = useState(25 * 60);
   return (
-    <section className="mx-auto w-max mt-4 flex flex-col items-center">
+    <section className=" w-full mt-4 flex flex-col items-center justify-center">
       <Timer
         status={status}
         totalTime={totalTime}

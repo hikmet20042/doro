@@ -6,8 +6,8 @@ import { Task } from "./Task";
 export function Tasks() {
   const [tasks, setTasks] = useState([]);
   return (
-    <section className="px-48 text-white flex flex-col">
-      <Header />
+    <section className="px-48 text-white flex flex-col w-full">
+      <Header tasks={tasks} setTasks={setTasks} />
       <div className="flex flex-col mt-5 px-10">
         <ul className="w-full">
           {tasks.map((task) => {

@@ -13,8 +13,13 @@
   }
 }
 
-html {
+html,
+body,
+#root {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 
 input::-webkit-outer-spin-button,
